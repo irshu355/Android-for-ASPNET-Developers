@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Cardview is a widget google added as part of material design
+        for this and RecyclerView to work, we need to add two packages to our packages.config,
+        add the below two lines to your build.gradle
+        compile 'com.android.support:cardview-v7:23.0.0'
+        compile 'com.android.support:recyclerview-v7:23.0.0'
+    -->
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardCornerRadius="1dp"
+        android:layout_marginBottom="4dp">
+        <LinearLayout
+            android:paddingBottom="5dp"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/cover_1"
+                android:id="@+id/imgAlbumCover"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:contentDescription="@string/action_settings"
+                android:scaleType="centerCrop" />
+            <TextView
+                android:id="@+id/lblAlbumTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:text="---"
+                android:textColor="@color/darkertext"
+                android:paddingTop="8dp"
+                android:layout_alignParentBottom="false" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/lblAlbumGenre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="---"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/darktext"
+                    android:layout_alignParentBottom="false" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/lblAlbumAvailability"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="---"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/darkgreen"
+                android:layout_alignParentBottom="false" />
+                <TextView
+                    android:id="@+id/lblAlbmPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="---"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/red"
+                    android:layout_alignParentRight="true" />
+
+</RelativeLayout>
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
