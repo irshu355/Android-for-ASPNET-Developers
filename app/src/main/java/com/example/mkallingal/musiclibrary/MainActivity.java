@@ -50,14 +50,11 @@ public class MainActivity extends AppCompatActivity {
         if(_Albums!=null&&_Albums.size()>0){
             RecyclerView rvGrid= (RecyclerView) findViewById(R.id.rvAlbums);
             rvGrid.setHasFixedSize(true);
-
             /*
             * set grid layout (masonry style) for our recyclerview.
             */
-
             _staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, 1);
             rvGrid.setLayoutManager(_staggeredGridLayoutManager);
-
           /*
            * Context in android is similar to HttpContext in ASP.NET. It has all the details about the state, the resources and other details
            * of our app

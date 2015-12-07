@@ -14,11 +14,9 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +45,7 @@ public class NewAlbumActivity extends AppCompatActivity {
         Button _btnSave= (Button) findViewById(R.id.btnSave);
 
         /*
-        * adding the event handler to _btnSave
+        * add an event handler to _btnSave
         */
         _btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,11 +96,9 @@ public class NewAlbumActivity extends AppCompatActivity {
                         editor.putString(_ALBUMS_Key,_SerializedAlbums);
                         editor.apply();
                     }else{
-
                          /*
                         * Instantiate a new List<Album>, add our new album into it, serialize it and save it to SharedPreferences
                         */
-
                         List<Album> _Albums=new ArrayList<Album>();
                         _Albums.add(_Album);
                         String _SerializedAlbums = gson.toJson(_Albums);
