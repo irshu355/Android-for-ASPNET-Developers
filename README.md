@@ -1,4 +1,4 @@
-![enter image description here](https://img.shields.io/badge/release-0.3.0-blue.svg)&nbsp; ![enter image description here](https://img.shields.io/badge/license-Apache 2-blue.svg)&nbsp; ![enter image description here](https://img.shields.io/badge/issues-0-green.svg)
+
 
 ![enter image description here](https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/cover.png)
 
