@@ -783,4 +783,156 @@ Create a recycler_view_item_layout.xml layout file and paste the following in it
     </LinearLayout>
 ![enter image description here](https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/12.png)
 
+Now Let’s create an adapter for the RecyclerView, we will bring in a constructor, so we can pass our Context and List<Album> as parameters.
+
+    public class AlbumsRecyclerViewAdapter extends RecyclerView.Adapter<AlbumsRecyclerViewAdapter.AlbumViewHolder> {
+    private List<Album> _Albums;
+    private Context _Context;
+    private ArrayList<Integer> ImagesList;
+    public AlbumsRecyclerViewAdapter(Context _context, List<Album> _albums){
+    this._Context= _context;
+    this._Albums=_albums;
+    
+    /*I'm gonna create an array of Album arts i have in my drawables directory.
+    * Please remove this code, after you bring in the AlbumArt in our model as part of the exercise
+    * */
+    ImagesList=new ArrayList<Integer>();
+    ImagesList.add(R.drawable.cover_1);
+    ImagesList.add(R.drawable.cover_2);
+    ImagesList.add(R.drawable.cover_3);
+    ImagesList.add(R.drawable.cover_4);
+    ImagesList.add(R.drawable.cover_5);
+    
+    }
+    @Override
+    public AlbumViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    /*this event is fired every time android wants to create a new column to our RecyclerView. We have to tell Android what layout we need to inflate for that column
+    */
+    View _Item = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycer_view_item_layout, parent, false);
+    return new AlbumViewHolder(_Item);
+    }
+    
+    @Override
+    public void onBindViewHolder(AlbumViewHolder holder, int position) {
+    Album _Album= this._Albums.get(position);
+    holder.AlbumTitle.setText(_Album.AlbumTitle);
+    holder.AlbumGenre.setText(_Album.AlbumGenre);
+    holder.AlbumPrice.setText("$"+String.valueOf(_Album.AlbumPrice));
+    holder.AlbumAvailability.setText(_Album.Availability?"Available":"Out of stock");
+    
+    /* often time when we want to get access to our colors or drawables, we need to get to getResources(), this method can always be found on the View or Context classs
+    */
+    
+    if(_Album.Availability){
+    holder.AlbumAvailability.setTextColor( holder.itemView.getResources().getColor(R.color.darkgreen));
+    }else{
+    holder.AlbumAvailability.setTextColor( holder.itemView.getResources().getColor(R.color.red));
+    }
+    Random random = new Random();
+    int index = random.nextInt(5);
+    
+    /*
+    * i wanted to get a random image from my images array to display it as the album art for that item
+    */
+    
+    holder.AlbumCover.setImageDrawable( holder.itemView.getResources().getDrawable(ImagesList.get(index)));
+    
+    }
+    
+    @Override
+    public int getItemCount() {
+    return this._Albums.size();
+    }
+    
+    public class AlbumViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public TextView AlbumTitle;
+    public TextView AlbumGenre;
+    public TextView AlbumPrice;
+    public TextView AlbumAvailability;
+    public ImageView AlbumCover;
+    public AlbumViewHolder(View itemView) {
+    super(itemView);
+    itemView.setOnClickListener(this);
+    AlbumTitle = (TextView) itemView.findViewById(R.id.lblAlbumTitle);
+    AlbumGenre = (TextView) itemView.findViewById(R.id.lblAlbumGenre);
+    AlbumAvailability= (TextView) itemView.findViewById(R.id.lblAlbumAvailability);
+    AlbumPrice= (TextView) itemView.findViewById(R.id.lblAlbmPrice);
+    AlbumCover=(ImageView) itemView.findViewById(R.id.imgAlbumCover);
+    }
+    @Override
+    public void onClick(View view) {
+    Toast.makeText(view.getContext(), "Clicked Position = " + getPosition(), Toast.LENGTH_SHORT).show();
+    }
+    }
+    }
+
+As a final stage, now we have to instantiate our adapter and pass the Context and List<Albums> from the MainActivity. Below code takes care of that, before closing the onCreate method, add the following code:
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    
+     
+    
+    List<Album> _Albums= getAlbums();
+    
+    if(_Albums!=null&&_Albums.size()>0){
+    RecyclerView rvGrid= (RecyclerView) findViewById(R.id.rvAlbums);
+    rvGrid.setHasFixedSize(true);
+    /*
+    * set grid layout (masonry style) for our recyclerview.
+    */
+    _staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, 1);
+    rvGrid.setLayoutManager(_staggeredGridLayoutManager);
+    /*
+    * Context in android is similar to HttpContext in ASP.NET. It has all the details about the state, the resources and other details
+    * of our app
+    * We need to set an Adapter for our RecyclerView. I created AlbumsRecyclerViewAdapter.java in our app, so i'm gonna feed that
+    * adapter to RecycerView
+    * */
+    
+    AlbumsRecyclerViewAdapter rcAdapter = new AlbumsRecyclerViewAdapter(getApplicationContext(), _Albums);
+    rvGrid.setAdapter(rcAdapter);
+    }
+    
+     
+    
+    }
+    
+    private List<Album> getAlbums() {
+    SharedPreferences _Preferences= getSharedPreferences("MusicLibrary", 0);
+    final String _ALBUMS_Key="Albums";
+    String _AlbumsString=_Preferences.getString(_ALBUMS_Key, "");
+    Type _TypeofAlbum = new TypeToken<List<Album>>() {
+    }.getType();
+    List<Album> _Albums = gson.fromJson(_AlbumsString, _TypeofAlbum);
+    return _Albums;
+    }
+
+And we are done!!!
+
+Compile the code and see if you get a clean build. Most probably you wont, try to debug or refer to the code.
+
+## 5. Exercise
+
+I have created 2 branches, **master** branch has the codes we have completed for this tutorial, **full_implementation** covers the below exercise as well.
+
+Here are the tasks you need to complete as part of this training:
+
+1. Add Album Description and Album Art as properties to our model Album.java
+2. Allow user to select Album Art from his gallery, then upload the image to internal memory
+3. Create an AlbumDetails activity
+4. Create an EditAlbum activity
+5. Allow user to delete an album from the library
+
+##6. Conclusion
+
+If you made it this far, Congratulations!!! you can now start developing your own android apps natively. But of course, there are a lot of stuff you still need to explore, but i believe that will be a piece of cake for you already…
+
+Don’t let yourself down if you run into bugs. Keep trying. I myself had dozens of bugs while creating this very sample application.
+
+Thank you for referring to this tutorial, if you have any questions regarding this training, please inbox me to **irshu@outlook.com**, also follow my facebook page, [www.facebook.com/irshux](www.facebook.com/irshux)
+
+Have fun with Android development!!!
+
 
