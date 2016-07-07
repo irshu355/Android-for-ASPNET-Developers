@@ -5,6 +5,8 @@
 ##Getting started with Android for ASP.NET Developers
 ----
 
+>Before we startl, I have created **2 branches**, `master` branch has the codes we have completed for this tutorial, `full_implementation` covers the below exercise as well.
+
 Starting off with a new development platform such as Android can be hard, often there is a steap learning curve involved. I’ve been working as a web developer for the last 4 years. Recent circumstances in my company prompted me to learn Android. 
 
 But to my surprise, adopting android turned out to be a piece of cake, thanks to my web development skills. Here, i’m going to explain the various phases of Android development and how they can be compared to Web design & development.
