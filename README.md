@@ -3,7 +3,7 @@
 ![enter image description here](https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/cover.png)
 
 ##Getting started with Android for ASP.NET Developers
-----
+
 
 >Before we startl, I have created **2 branches**, `master` branch has the codes we have completed for this tutorial, `full_implementation` covers the below exercise as well.
 
