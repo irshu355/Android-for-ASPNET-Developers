@@ -6,7 +6,7 @@
 
 
 
->Before we startl, I have created **2 branches**. `master` branch has the codes that we cover for this tutorial, `full_implementation` covers the exercises i provided at the end of the tutorial. So if you have any diffiulty while going through the excercises, switch to 'full_implementation` and refer the code.
+>Before we start, I've created **2 branches**. `master` has the codes that we cover for this tutorial, `full_implementation` covers the exercises i provided at the end of the tutorial. So if you have any diffiulty while going through the excercises, switch to 'full_implementation` and refer the code.
 
 
 
@@ -21,7 +21,7 @@ You can easily map several concepts in Android straight to ASP.NET and front end
 
 ![enter image description here](https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/1.png)
 
-In this tutorial, we are creating a music library!!
+In this tutorial, we are creating a Music library!!
 
 I’m gonna assume that you are already familiar with Java, if not, you can find several good java training websites. My suggestion would be http://www.c4learn.com/javaprogramming/ or better yet, [follow this youtube training series](https://www.youtube.com/watch?list=PLFE2CE09D83EE3E28&v=Hl-zzrqQoSE).
 
@@ -82,9 +82,11 @@ Hit the finish button and we are through the Project setup wizard.
 Once the project is created, click the Run button (either go to **Run->Run App** or click on the green Play button from the top bar).
 
 For this stage, you need an Android device or an android emulator on your PC. Please refer [http://developer.android.com/training/basics/firstapp/running-app.html](http://developer.android.com/training/basics/firstapp/running-app.html) on how to configure your device for android studio to run the app.
-Now click the Run button and you will see the below screen on your device.
+Now click the *Run* button and you will see the below screen on your device.
 
 ![enter image description here](https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/6.jpg)
+
+
 
 
 Let’s look at the project structure A.S created for us, we are going to compare this with an ASP.NET MVC project structure:
@@ -142,7 +144,7 @@ Right click on **app →New →Activity → BlankActivity** and name it as `NewA
 
 ![enter image description here](https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/9.png)
 
-Once done, proceed to layout directory and open activity_new_album.xmlfile. This is where you design your UI. You can switch between Design/Source view (toggler can be found at the bottom left corner).
+Once done, proceed to layout directory and open `activity_new_album.xml` file. This is where you design your UI. You can switch between Design/Source view (toggler can be found at the bottom left corner).
 
 Android UI has
 
@@ -151,7 +153,7 @@ Android UI has
 
 There are several controls available, that you can make use of. Since it’s impossible for me to cover it all here, please proceed to the respective links to learn more about them.
 
-for our acitivity_new_album`enter code here` layout, we need to create 4 textboxes and 1 spinner (dropdown).
+for our `acitivity_new_album` layout, we need to create 4 textboxes and 1 spinner (dropdown).
 
         <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -272,12 +274,13 @@ for our acitivity_new_album`enter code here` layout, we need to create 4 textbox
     android:text="Save Album" />
     
     </LinearLayout>
+    
 if you click on the design view, you will see the UI as below:
 ![enter image description here](https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/10.jpg)
 
 **important!!!**
 
-for the Spinner (dropdown) to fill all Genres, i given the data soure as “@array/genre_arrays”, so please open values →strings.xml and add the following lines:
+for the Spinner (dropdown) to fill all Genres, i given the data soure as `“@array/genre_arrays”`, so please open values →strings.xml and add the following lines:
 
     <string-array name="genre_arrays">
     <item></item>
@@ -298,7 +301,7 @@ also in **colors.xml**, add the following colors:
     <item name="darkertext" type="color">#333</item>
     <item name="lighttext" type="color">#999</item>
     
-Below are 6 album covers i used in this training, please save these images to res →drawables directory and name them, cover_1,cover_2,cover_3,cover_4,cover_5 and cover_6 respectively.
+Below are 6 album covers i used in this training, please save these images to res →drawables directory and name them, `cover_1`,`cover_2`,`cover_3`,`cover_4`,`cover_5` and `cover_6` respectively.
 
 ![enter image description here](https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/thubs_1.jpg)&nbsp;&nbsp;&nbsp;&nbsp;![enter image description here](https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/thubs_2.jpg)&nbsp;&nbsp;&nbsp;&nbsp;![enter image description here](https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/thubs_3.jpg)&nbsp;&nbsp;&nbsp;![enter image description here](https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/thubs_4.jpg)&nbsp;&nbsp;&nbsp; ![enter image description here](https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/thubs_5.jpg)&nbsp;&nbsp;&nbsp; ![enter image description here](https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/thubs_6.jpg)  
 
@@ -306,14 +309,14 @@ Please save the above images with the respective names in your drawables folder.
 
 As you can see, i created a LinearLayout as my parent, because i wanted to stack all my controls vertically one by one, (defined byandroid:orientation=”vertical”).
 
-Every elements you define in the layout must have android:layout_widthand android:layout_height as attributes. The values must be either:
+Every elements you define in the layout must have `android:layout_width` and `android:layout_height` as required attributes. The values must be either:
 
 1. match_parent (match the size of the parent element)
 2. wrap_content (wrap it to the content)
 
 For this exercise, you may copy the above and play around with the attributes and elements. You can always switch to design view to oversee how the UI is laid out.
 
-We also need a model for our album, Create a class file Album.java and add the following model,
+We also need a model for our album, Create a class file `Album.java` and add the following model,
 ![enter image description here](https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/11.png)
 
 right click on com.>project<.>app< →New →Java Class, name it Album.java
@@ -325,7 +328,7 @@ right click on com.>project<.>app< →New →Java Class, name it Album.java
     public Boolean Availability;
     }
 
-Now for the code behind,NewAlbumActivity.java, create the event for Save button inside onCreate event:
+Now for the code behind,`NewAlbumActivity.java`, create the event for Save button inside onCreate event:
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -448,13 +451,13 @@ below code has the same effect of location.href=’/NewAlbum’ in javascript.
     });
     }
 
-tapping the Floating Action Button on main screen will now bring you to NewAbumActivity. Try to add a new Album, did everything go smooth?nope?
+tapping the Floating Action Button on main screen will now bring you to `NewAbumActivity`. Try to add a new Album, did everything go smooth?nope?
 
 you can always refer to the source code i uploaded to Bitbucket for comparison, [https://bitbucket.org/irshu_lx/android-music-library-app/src](https://bitbucket.org/irshu_lx/android-music-library-app/src).
 
-Once you have a clean build, we will add RecyclerView(a Gridview) widgetto our MainActivity, to show all the Albums.
+Once you have a clean build, we will add `RecyclerView` to our `MainActivity`, to show all the Albums.
 
-RecyclerView is a GridView or a ListView in ASP.NET. It lets you lay out a Collection of items on the screen. Every RecyclerView should have an Adapter attached to it, just as a GridViewAdapter in ASP.NET WebForms.
+RecyclerView is a GridView or a ListView in ASP.NET. It lets you lay out a Collection of items on the screen. Every RecyclerView should have an Adapter attached to it, just as a `GridViewAdapter` in ASP.NET WebForms.
 
 replace the content_main.xml with the following code:
 
@@ -696,7 +699,7 @@ Create a recycler_view_item_layout.xml layout file and paste the following in it
     
     Every RecyclerView must also have a ListItem template created too. Here you define how each item on your RecyclerView should be displayed.
     
-    Create a recycler_view_item_layout.xml layout file and paste the following in it:
+    Create a `recycler_view_item_layout.xml` layout file and paste the following in it:
     
     <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -788,7 +791,7 @@ Create a recycler_view_item_layout.xml layout file and paste the following in it
     </LinearLayout>
 ![enter image description here](https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/12.png)
 
-Now Let’s create an adapter for the RecyclerView, we will bring in a constructor, so we can pass our Context and List<Album> as parameters.
+Now Let’s create an adapter for the `RecyclerView`, we will bring in a constructor, so we can pass our Context and List<Album> as parameters.
 
     public class AlbumsRecyclerViewAdapter extends RecyclerView.Adapter<AlbumsRecyclerViewAdapter.AlbumViewHolder> {
     private List<Album> _Albums;
@@ -871,7 +874,7 @@ Now Let’s create an adapter for the RecyclerView, we will bring in a construct
     }
     }
 
-As a final stage, now we have to instantiate our adapter and pass the Context and List<Albums> from the MainActivity. Below code takes care of that, before closing the onCreate method, add the following code:
+As a final stage, now we have to instantiate our adapter and pass the `Context` and `List<Albums>` from the MainActivity. Below code takes care of that. Add the following code at the end of `onCreate` method:
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
