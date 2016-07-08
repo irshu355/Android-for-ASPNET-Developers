@@ -34,7 +34,7 @@
 <a id="getting-started-with-android-for-aspnet-developers" class="anchor" href="#getting-started-with-android-for-aspnet-developers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting started with Android for ASP.NET Developers</h2>
 
 <blockquote>
-<p>Before we startl, I have created <strong>2 branches</strong>. <code>master</code> branch has the codes that we cover for this tutorial, <code>full_implementation</code> covers the exercises i provided at the end of the tutorial. So if you have any diffiulty while going through the excercises, switch to 'full_implementation` and refer the code.</p>
+<p>Before we start, I've created <strong>2 branches</strong>. <code>master</code> has the codes that we cover for this tutorial, <code>full_implementation</code> covers the exercises i provided at the end of the tutorial. So if you have any diffiulty while going through the excercises, switch to 'full_implementation` and refer the code.</p>
 </blockquote>
 
 <p>Starting off with a new development platform such as Android can be hard, often there is a steap learning curve involved. I’ve been working as a web developer for the last 4 years. Recent circumstances in my company prompted me to learn Android. </p>
@@ -49,7 +49,7 @@
 
 <p><img src="https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/1.png" alt="enter image description here"></p>
 
-<p>In this tutorial, we are creating a music library!!</p>
+<p>In this tutorial, we are creating a Music library!!</p>
 
 <p>I’m gonna assume that you are already familiar with Java, if not, you can find several good java training websites. My suggestion would be <a href="http://www.c4learn.com/javaprogramming/">http://www.c4learn.com/javaprogramming/</a> or better yet, <a href="https://www.youtube.com/watch?list=PLFE2CE09D83EE3E28&amp;v=Hl-zzrqQoSE">follow this youtube training series</a>.</p>
 
@@ -127,7 +127,7 @@
 <p>Once the project is created, click the Run button (either go to <strong>Run-&gt;Run App</strong> or click on the green Play button from the top bar).</p>
 
 <p>For this stage, you need an Android device or an android emulator on your PC. Please refer <a href="http://developer.android.com/training/basics/firstapp/running-app.html">http://developer.android.com/training/basics/firstapp/running-app.html</a> on how to configure your device for android studio to run the app.
-Now click the Run button and you will see the below screen on your device.</p>
+Now click the <em>Run</em> button and you will see the below screen on your device.</p>
 
 <p><img src="https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/6.jpg" alt="enter image description here"></p>
 
@@ -202,7 +202,7 @@ compile 'com.google.code.gson:gson:2.3.1'
 
 <p><img src="https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/9.png" alt="enter image description here"></p>
 
-<p>Once done, proceed to layout directory and open activity_new_album.xmlfile. This is where you design your UI. You can switch between Design/Source view (toggler can be found at the bottom left corner).</p>
+<p>Once done, proceed to layout directory and open <code>activity_new_album.xml</code> file. This is where you design your UI. You can switch between Design/Source view (toggler can be found at the bottom left corner).</p>
 
 <p>Android UI has</p>
 
@@ -213,7 +213,7 @@ compile 'com.google.code.gson:gson:2.3.1'
 
 <p>There are several controls available, that you can make use of. Since it’s impossible for me to cover it all here, please proceed to the respective links to learn more about them.</p>
 
-<p>for our acitivity_new_album<code>enter code here</code> layout, we need to create 4 textboxes and 1 spinner (dropdown).</p>
+<p>for our <code>acitivity_new_album</code> layout, we need to create 4 textboxes and 1 spinner (dropdown).</p>
 
 <pre><code>    &lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -341,7 +341,7 @@ android:text="Save Album" /&gt;
 
 <p><strong>important!!!</strong></p>
 
-<p>for the Spinner (dropdown) to fill all Genres, i given the data soure as “@array/genre_arrays”, so please open values →strings.xml and add the following lines:</p>
+<p>for the Spinner (dropdown) to fill all Genres, i given the data soure as <code>“@array/genre_arrays”</code>, so please open values →strings.xml and add the following lines:</p>
 
 <pre><code>&lt;string-array name="genre_arrays"&gt;
 &lt;item&gt;&lt;/item&gt;
@@ -364,7 +364,7 @@ android:text="Save Album" /&gt;
 &lt;item name="lighttext" type="color"&gt;#999&lt;/item&gt;
 </code></pre>
 
-<p>Below are 6 album covers i used in this training, please save these images to res →drawables directory and name them, cover_1,cover_2,cover_3,cover_4,cover_5 and cover_6 respectively.</p>
+<p>Below are 6 album covers i used in this training, please save these images to res →drawables directory and name them, <code>cover_1</code>,<code>cover_2</code>,<code>cover_3</code>,<code>cover_4</code>,<code>cover_5</code> and <code>cover_6</code> respectively.</p>
 
 <p><img src="https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/thubs_1.jpg" alt="enter image description here">    <img src="https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/thubs_2.jpg" alt="enter image description here">    <img src="https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/thubs_3.jpg" alt="enter image description here">   <img src="https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/thubs_4.jpg" alt="enter image description here">    <img src="https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/thubs_5.jpg" alt="enter image description here">    <img src="https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/thubs_6.jpg" alt="enter image description here">  </p>
 
@@ -372,7 +372,7 @@ android:text="Save Album" /&gt;
 
 <p>As you can see, i created a LinearLayout as my parent, because i wanted to stack all my controls vertically one by one, (defined byandroid:orientation=”vertical”).</p>
 
-<p>Every elements you define in the layout must have android:layout_widthand android:layout_height as attributes. The values must be either:</p>
+<p>Every elements you define in the layout must have <code>android:layout_width</code> and <code>android:layout_height</code> as required attributes. The values must be either:</p>
 
 <ol>
 <li>match_parent (match the size of the parent element)</li>
@@ -381,7 +381,7 @@ android:text="Save Album" /&gt;
 
 <p>For this exercise, you may copy the above and play around with the attributes and elements. You can always switch to design view to oversee how the UI is laid out.</p>
 
-<p>We also need a model for our album, Create a class file Album.java and add the following model,
+<p>We also need a model for our album, Create a class file <code>Album.java</code> and add the following model,
 <img src="https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/11.png" alt="enter image description here"></p>
 
 <p>right click on com.&gt;project&lt;.&gt;app&lt; →New →Java Class, name it Album.java</p>
@@ -394,7 +394,7 @@ public Boolean Availability;
 }
 </code></pre>
 
-<p>Now for the code behind,NewAlbumActivity.java, create the event for Save button inside onCreate event:</p>
+<p>Now for the code behind,<code>NewAlbumActivity.java</code>, create the event for Save button inside onCreate event:</p>
 
 <pre><code>@Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -519,13 +519,13 @@ startActivity(intent);
 }
 </code></pre>
 
-<p>tapping the Floating Action Button on main screen will now bring you to NewAbumActivity. Try to add a new Album, did everything go smooth?nope?</p>
+<p>tapping the Floating Action Button on main screen will now bring you to <code>NewAbumActivity</code>. Try to add a new Album, did everything go smooth?nope?</p>
 
 <p>you can always refer to the source code i uploaded to Bitbucket for comparison, <a href="https://bitbucket.org/irshu_lx/android-music-library-app/src">https://bitbucket.org/irshu_lx/android-music-library-app/src</a>.</p>
 
-<p>Once you have a clean build, we will add RecyclerView(a Gridview) widgetto our MainActivity, to show all the Albums.</p>
+<p>Once you have a clean build, we will add <code>RecyclerView</code> to our <code>MainActivity</code>, to show all the Albums.</p>
 
-<p>RecyclerView is a GridView or a ListView in ASP.NET. It lets you lay out a Collection of items on the screen. Every RecyclerView should have an Adapter attached to it, just as a GridViewAdapter in ASP.NET WebForms.</p>
+<p>RecyclerView is a GridView or a ListView in ASP.NET. It lets you lay out a Collection of items on the screen. Every RecyclerView should have an Adapter attached to it, just as a <code>GridViewAdapter</code> in ASP.NET WebForms.</p>
 
 <p>replace the content_main.xml with the following code:</p>
 
@@ -684,7 +684,7 @@ android:layout_alignParentRight="true" /&gt;
 
 Every RecyclerView must also have a ListItem template created too. Here you define how each item on your RecyclerView should be displayed.
 
-Create a recycler_view_item_layout.xml layout file and paste the following in it:
+Create a `recycler_view_item_layout.xml` layout file and paste the following in it:
 
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -778,7 +778,7 @@ android:layout_alignParentRight="true" /&gt;
 
 <p><img src="https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/12.png" alt="enter image description here"></p>
 
-<p>Now Let’s create an adapter for the RecyclerView, we will bring in a constructor, so we can pass our Context and List as parameters.</p>
+<p>Now Let’s create an adapter for the <code>RecyclerView</code>, we will bring in a constructor, so we can pass our Context and List as parameters.</p>
 
 <pre><code>public class AlbumsRecyclerViewAdapter extends RecyclerView.Adapter&lt;AlbumsRecyclerViewAdapter.AlbumViewHolder&gt; {
 private List&lt;Album&gt; _Albums;
@@ -862,7 +862,7 @@ Toast.makeText(view.getContext(), "Clicked Position = " + getPosition(), Toast.L
 }
 </code></pre>
 
-<p>As a final stage, now we have to instantiate our adapter and pass the Context and List from the MainActivity. Below code takes care of that, before closing the onCreate method, add the following code:</p>
+<p>As a final stage, now we have to instantiate our adapter and pass the <code>Context</code> and <code>List&lt;Albums&gt;</code> from the MainActivity. Below code takes care of that. Add the following code at the end of <code>onCreate</code> method:</p>
 
 <pre><code>@Override
 protected void onCreate(Bundle savedInstanceState) {
