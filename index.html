@@ -1,33 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Android for ASP.NET Developers by irshuLx</title>
+    <meta name="viewport" content="width=640">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
     <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Android for ASP.NET Developers by irshuLx</title>
   </head>
+
   <body>
-    <div class="wrapper">
+    <a id="forkme_banner" href="https://github.com/irshuLx/Android-for-ASPNET-Developers">View on GitHub</a>
+    <div class="shell">
+
       <header>
-        <h1>Android for ASP.NET Developers</h1>
-        <p>A getting started Music Library App for ASP.NET Developers</p>
-
-        <p class="view"><a href="https://github.com/irshuLx/Android-for-ASPNET-Developers">View the Project on GitHub <small>irshuLx/Android-for-ASPNET-Developers</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/irshuLx/Android-for-ASPNET-Developers/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/irshuLx/Android-for-ASPNET-Developers/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/irshuLx/Android-for-ASPNET-Developers">View On <strong>GitHub</strong></a></li>
-        </ul>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Android for ASP.NET Developers</h1>
+            <h2>A getting started Music Library App for ASP.NET Developers</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
       </header>
-      <section>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/irshuLx/Android-for-ASPNET-Developers/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/irshuLx/Android-for-ASPNET-Developers/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
         <p><img src="https://raw.githubusercontent.com/irshuLx/Android-for-ASPNET-Developers/master/screens/cover.png" alt="enter image description here"></p>
 
 <h2>
@@ -936,12 +954,21 @@ return _Albums;
 
 <p>Have fun with Android development!!!</p>
       </section>
+
       <footer>
-        <p>This project is maintained by <a href="https://github.com/irshuLx">irshuLx</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/irshuLx">irshuLx</a> can be found on <a href="https://github.com/irshuLx/Android-for-ASPNET-Developers">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
       </footer>
+
     </div>
-    <script src="javascripts/scale.fix.js"></script>
+
     
   </body>
 </html>
